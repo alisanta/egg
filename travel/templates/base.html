@@ -1,0 +1,80 @@
+{% load staticfiles %}
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<title>{% block pagetitle %}Title{% endblock pagetitle %}</title>
+</head>
+<body>
+	
+<div class="navbar navbar-inverse navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Travel Expense Claim</a>
+        </div>
+        {% url 'travel:index' as the_url %}
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="{{ the_url }}">Home</a></li>
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">View <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">My Claim Requests</a></li>
+                <li><a href="#">All Claim Requests</a></li>
+                 <li class="divider"></li>
+                 <li class="dropdown-header">For Approvers</li>
+                <li><a href="#">Waiting for Approvals</a></li>
+               
+                
+              </ul>
+            </li>
+            <li><a href="#contact">Help</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+      {% block maincontent %}
+        
+      {% endblock maincontent %}
+
+      {% if is_paginated %}
+    <div class="col-md-2 col-md-offset-10">
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ page_obj.number }} of {{ paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+            {% endif %}
+        </span>
+    </div>
+    </div>
+    {% endif %}
+
+    </div>
+<script src="{% static 'jquery-1.9.0.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+
+</body>
+</html>
+
+
+

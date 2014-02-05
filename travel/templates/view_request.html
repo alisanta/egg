@@ -1,0 +1,282 @@
+{% extends "base.html" %}
+{% block pagetitle %}Travel Expense Claim Form
+  
+{% endblock pagetitle %}
+{% block maincontent %}
+<form action="" method="post">{% csrf_token %}
+      <div class="row">
+         <a href="{{ the_url }}" class="btn btn-primary btn-lg" role="button" >Close</a>
+       <a href="{{ the_url }}{{ doc.id}}/edit" class="btn btn-primary btn-lg" role="button" >Edit</a>
+       <a href="{{ the_url }}{{ doc.id}}/edit" class="btn btn-primary btn-lg" role="button" >Approve</a>
+       <a href="{{ the_url }}{{ doc.id}}/edit" class="btn btn-primary btn-lg" role="button" >Reject</a>
+        <div class="col-md-12">
+      {# my content #}
+     
+      </div>
+    </div>
+    
+    <div class="row">
+       
+                <legend>Travel Expense Claim Form</legend>
+                <div class="row-fluid col-md-12">
+                    <div class="col-md-6">
+                        <div id="div_id_request_number" class="form-group">
+                            <label for="id_request_number" class="control-label col-sm-4">Request number</label>
+                            <div class="controls col-sm-8">
+                                {{ doc.request_number }}
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-fluid col-md-12">
+                    <div class="col-md-6">
+                        <div id="div_id_request_date" class="form-group required">
+                            <label for="id_request_date" class="control-label col-sm-4 requiredField">Request date</label>
+                            <div class="controls col-sm-8">
+                               {{ doc.request_date }}
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-fluid col-md-12" style="background-color:#eee; padding:5px;">
+                    <div class=" col-md-6">
+                        <div id="div_id_emp_name" class="form-group required">
+                            <label for="id_emp_name" class="control-label col-sm-4 requiredField">Employee Name</label>
+                            <div class="controls col-sm-8">
+                                {{doc.emp_name}}
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="div_id_emp_division" class="form-group required">
+                            <label for="id_emp_division" class="control-label col-sm-4 requiredField">Division</label>
+                            <div class="controls col-sm-8">
+                                {{doc.emp_division}}
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="div_id_emp_location" class="form-group required">
+                            <label for="id_emp_location" class="control-label col-sm-4 requiredField">Location</label>
+                            <div class="controls col-sm-8">
+                                {{doc.emp_location}}
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="div_id_emp_jobtitle" class="form-group required">
+                            <label for="id_emp_jobtitle" class="control-label col-sm-4 requiredField">Job Title</label>
+                            <div class="controls col-sm-8">
+                                {{doc.emp_jobtitle}}
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-fluid col-md-12">
+                    <div class="col-md-6">
+                        <div id="div_id_purpose" class="form-group required">
+                            <label for="id_purpose" class="control-label col-sm-4 requiredField">Purpose</label>
+                            <div class="controls col-sm-8">
+                                {{doc.purpose}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-fluid col-md-12">
+                    <div class="col-md-6">
+                        <div id="div_id_destination" class="form-group required">
+                            <label for="id_destination" class="control-label col-sm-4 requiredField">Destination</label>
+                            <div class="controls col-sm-8">
+                                {{doc.destination}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-fluid col-md-12">
+                    <div class="col-md-6">
+                        <div id="div_id_date_departure" class="form-group required">
+                            <label for="id_date_departure" class="control-label col-sm-4 requiredField">Date of Departure</label>
+                            <div class="controls col-sm-8">
+                                {{doc.date_departure}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-fluid col-md-12">
+                    <div class="col-md-6">
+                        <div id="div_id_date_return" class="form-group required">
+                            <label for="id_date_return" class="control-label col-sm-4 requiredField">Date of Return</label>
+                            <div class="controls col-sm-8">
+                                {{doc.date_return}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-fluid col-md-12" style="background-color:#eee; border:1px solid; padding:5px;">
+                    <div class="col-md-4">
+                        Number of Days
+                    </div>
+                    <div class="col-md-4">
+                        Rate
+                    </div>
+                    <div class="col-md-4">
+                        Amount
+                    </div>
+                    <div class="formColumn row-fluid col-md-4">
+                        <div id="div_id_days_fullday" class="form-group required">
+                            <div class="controls col-sm-8">
+                            {{doc.days_fullday}}
+                            </div>
+                        </div>
+                        <div id="div_id_days_halfday" class="form-group required">
+                            <div class="controls col-sm-8">
+                                {{doc.days_halfday}}
+                            </div>
+                        </div>
+                        <div id="div_id_days_breakfast" class="form-group required">
+                            <div class="controls col-sm-8">
+                                {{doc.days_breakfast}}
+                            </div>
+                        </div>
+                        <div id="div_id_days_lunch" class="form-group required">
+                            <div class="controls col-sm-8">
+                                {{doc.days_lunch}}
+                            </div>
+                        </div>
+                        <div id="div_id_days_dinner" class="form-group required">
+                            <div class="controls col-sm-8">
+                                {{doc.days_dinner}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formColumn row-fluid col-md-4">
+                        <div id="div_id_rate_fullday" class="form-group required">
+                            <div class="controls col-sm-8">
+                                {{doc.rate_fullday}}
+                            </div>
+                        </div>
+                        <div id="div_id_rate_halfday" class="form-group required">
+                            <div class="controls col-sm-8">
+                                {{doc.rate_halfday}}
+                            </div>
+                        </div>
+                        <div id="div_id_rate_breakfast" class="form-group required">
+                            <div class="controls col-sm-8">
+                                {{doc.rate_breakfast}}
+                            </div>
+                        </div>
+                        <div id="div_id_rate_lunch" class="form-group required">
+                            <div class="controls col-sm-8">
+                                {{doc.rate_lunch}}
+                            </div>
+                        </div>
+                        <div id="div_id_rate_dinner" class="form-group required">
+                            <div class="controls col-sm-8">
+                                {{doc.rate_dinner}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formColumn row-fluid col-md-4">
+                        <div id="div_id_amount_fullday" class="form-group required">
+                            <div class="controls col-sm-8">
+                                {{doc.amount_fullday}}
+                            </div>
+                        </div>
+                        <div id="div_id_amount_halfday" class="form-group required">
+                            <div class="controls col-sm-8">
+                                {{doc.amount_halfday}}
+                            </div>
+                        </div>
+                        <div id="div_id_amount_breakfast" class="form-group required">
+                            <div class="controls col-sm-8">
+                                {{doc.amount_breakfast}}
+                            </div>
+                        </div>
+                        <div id="div_id_amount_lunch" class="form-group required">
+                            <div class="controls col-sm-8">
+                                {{doc.amount_lunch}}
+                            </div>
+                        </div>
+                        <div id="div_id_amount_dinner" class="form-group required">
+                            <div class="controls col-sm-8">
+                                {{doc.amount_dinner}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-fluid col-md-12">
+                    <div class="col-md-6">
+                        <div id="div_id_total_request_amount" class="form-group required">
+                            <label for="id_total_request_amount" class="control-label col-sm-4 requiredField">Total request amount</label>
+                            <div class="controls col-sm-8">
+                                {{doc.total_request_amount}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-bordered">
+                    <tr>
+                        <td class="success">
+                            Requestor
+                        </td>
+                        <td class="success">
+                            Section Head
+                        </td>
+                        <td class="success">
+                            General Manager
+                        </td>
+                        <td class="success"></td>
+                    </tr>
+                    <tr>
+                        <td style="height:100px;">
+                            <div id="div_id_requestor_name" class="form-group required">
+                                <div class="controls col-sm-8">
+                                    {{doc.requestor_name}}
+                                </div>
+                            </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="success">
+                            Account Supervisor
+                        </td>
+                        <td class="success">
+                            Financial Controller
+                        </td>
+                        <td class="success">
+                            CEO
+                        </td>
+                        <td class="success">
+                            Accountant
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height:100px;">
+                            &nbsp;<br>
+                            &nbsp;
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+           
+
+      </div>
+ </form> 
+{% endblock maincontent %}
+      
+
+
+      
+
+

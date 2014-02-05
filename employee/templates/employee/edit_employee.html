@@ -1,0 +1,26 @@
+{% extends "employee/base.html" %}
+{% block pagetitle %}Employee Master
+  
+{% endblock pagetitle %}
+{% block maincontent %}
+<form action="" method="post">{% csrf_token %}
+<div class="row">
+      <a href="{{ the_url }}" class="btn btn-primary btn-lg" role="button" >Close </a>
+    <input type="submit" value="Update" class="btn btn-primary btn-lg"/>
+     <table class="table">
+      {{form.as_table}}
+      
+
+     </table>     
+
+                                       
+
+   
+
+      </div>
+</form>
+{% endblock maincontent %}
+
+
+		
+    	
