@@ -65,6 +65,7 @@ class TRAVELREQUESTFORM(ModelForm):
 		self.helper.form_class = 'form-horizontal'
 		self.helper.label_class = 'col-sm-4'
 		self.helper.field_class = 'col-sm-8'
+		self.helper.form_tag = False # do not render form tag, so we can differentiate edit vs new
 		#self.helper.form_show_labels = False 
 		self.helper.layout = Layout(
 		FormActions(

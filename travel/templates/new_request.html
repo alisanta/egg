@@ -8,8 +8,11 @@
 {% block maincontent %}
 
 
-     
+     <form action="{% url 'travel:createTravel' %}"  class="form-horizontal" method="post">
+
      {% crispy form %}
+
+   </form>
 
 {% endblock maincontent %}
       

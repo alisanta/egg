@@ -31,7 +31,7 @@
         </tr>
         {% for doc in doc_list  %}
             <tr>
-            <td class="col-md-2"><a href="/travel/{{ doc.id}}/view">{{ doc.id}}</a></td>
+            <td class="col-md-2"><a href="{{the_url}}{{ doc.id}}/view">{{ doc.id}}</a></td>
             <td class="col-md-2">{{ doc.request_date }}</td>
             <td class="col-md-3">{{ doc.requestor_name }}</td>
            
