@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block pagetitle %}Travel Expense Claim Form
+  
+{% endblock pagetitle %}
+
+{% load crispy_forms_tags %}
+
+{% block maincontent %}
+
+
+     <form action=""  class="form-horizontal botak" method="post">
+ <a href="{{ the_url }}" class="btn btn-primary btn-lg" role="button" >Close </a>
+    <input type="submit" value="Update" class="btn btn-primary btn-lg"/>
+     {% crispy form %}
+
+   </form>
+
+{% endblock maincontent %}
+      
+
+
+      
+
+

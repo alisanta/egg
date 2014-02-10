@@ -32,7 +32,7 @@ class createTravel(generic.CreateView):
 
 class editTravel(generic.UpdateView):
 	"""docstring for editEmployee"""
-	template_name = 'new_request.html'
+	template_name = 'edit_request.html'
 	form_class= TRAVELREQUESTFORM
 	model = TRAVELREQUEST
 	

@@ -24,19 +24,19 @@
           <th>Request Number</th>
           <th>Request Date</th>
           <th>Requestor Name</th>
-          
-
           <th>Department</th>
+          <th>Destination</th>
           <th>Amount</th>
         </tr>
         {% for doc in doc_list  %}
             <tr>
             <td class="col-md-2"><a href="{{the_url}}{{ doc.id}}/view">{{ doc.id}}</a></td>
             <td class="col-md-2">{{ doc.request_date }}</td>
-            <td class="col-md-3">{{ doc.requestor_name }}</td>
+            <td class="col-md-2">{{ doc.requestor_name }}</td>
            
             <td class="col-md-2">{{ doc.emp_division }}</td>
-             <td class="col-md-3">{{ doc.total_request_amount }}</td>
+             <td class="col-md-2">{{ doc.destination }}</td>
+             <td class="col-md-2">{{ doc.total_request_amount }}</td>
             </tr>
           {% endfor %}
         
