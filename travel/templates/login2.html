@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block pagetitle %}Login
+  
+{% endblock pagetitle %}
+
+{% block maincontent %}
+
+{% if form.errors %}
+<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+{% url "mylogin" as ubuh %}
+<form method="post" action="{% url 'travel:mylogin'  %}">
+{% csrf_token %}
+<table>
+<tr>
+    <td>{{ form.username.label_tag }}</td>
+    <td>{{ form.username }}</td>
+</tr>
+<tr>
+    <td>{{ form.password.label_tag }}</td>
+    <td>{{ form.password }}</td>
+</tr>
+</table>
+
+<input type="submit" value="login" />
+<input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+{% endblock %}
